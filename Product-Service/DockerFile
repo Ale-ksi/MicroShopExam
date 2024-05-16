@@ -1,15 +1,15 @@
-# Utiliser une image Python
-FROM python:latest
+# Utiliser une image de Node.js
+FROM node:latest
 
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
 # Copier les fichiers nécessaires
-COPY requirements.txt .
-COPY app.py .
+COPY package.json .
+COPY index.js .
 
 # Installer les dépendances
-RUN pip install -r requirements.txt
+RUN npm install
 
 # Commande par défaut pour exécuter le service
-CMD ["python", "app.py"]
+CMD ["node", "index.js"]

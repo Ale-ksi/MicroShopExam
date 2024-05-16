@@ -1,0 +1,14 @@
+# Utiliser une image Golang
+FROM golang:latest
+
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /app
+
+# Copier les fichiers nécessaires
+COPY . .
+
+# Compiler le code
+RUN go build .
+
+# Commande par défaut pour exécuter le service
+CMD ["./user-service"]
