@@ -1,0 +1,15 @@
+# Utiliser une image de Node.js
+FROM node:latest
+
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /app
+
+# Copier les fichiers nécessaires
+COPY package.json .
+COPY index.js .
+
+# Installer les dépendances
+RUN npm install
+
+# Commande par défaut pour exécuter le service
+CMD ["node", "index.js"]
